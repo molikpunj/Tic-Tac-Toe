@@ -1,0 +1,24 @@
+h1 
+{
+    padding-top: 100px;
+    text-align: center;
+    font-size: 200px;
+    font-family: 'Courier', 'Courier New', Courier, monospace;
+}
+
+button
+{
+    color: orange;
+    background-color: white;
+    padding: 30px;
+    margin: 30px;
+    margin-left: 900px;
+}
+
+body
+{
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
