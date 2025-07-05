@@ -35,6 +35,10 @@ h1
 div
 {
     text-align: center;
+    background-color: rgba(255, 69, 0, 0.8);
+    border-radius: 30px;
+    width: 300px;
+    margin-left: 800px;
 }
 
 body
