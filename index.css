@@ -1,10 +1,11 @@
 h1 
 {
-    padding-top: 100px;
+    padding-top: 50px;
+    padding-bottom:50px;
     text-align: center;
     font-size: 200px;
     font-family: 'Courier', 'Courier New', Courier, monospace;
-    color: orangered;
+    color: rgb(0, 242, 255);
 }
 
 .play
@@ -32,13 +33,30 @@ h1
     background-color: rgb(57, 170, 176);
 }
 
-div
+.headdiv
+{
+    text-align: center;
+    background-color: rgba(255, 69, 0, 0.8);
+    border-radius: 30px;
+    width: 1500px;
+    margin-left: 200px;
+}
+
+.butdiv
 {
     text-align: center;
     background-color: rgba(255, 69, 0, 0.8);
     border-radius: 30px;
     width: 300px;
     margin-left: 800px;
+}
+
+.creddiv
+{
+    text-align: center;
+    background-color: rgba(255, 69, 0, 0.8);
+    border-radius: 30px;
+    width: 300px;
 }
 
 body
@@ -54,5 +72,6 @@ p
     font-family: 'Courier', 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 30px;
-    color: orangered;
+    color: rgb(0, 242, 255);
+    padding: 20px;
 }
