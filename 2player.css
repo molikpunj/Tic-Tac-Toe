@@ -1,24 +1,103 @@
+body
+{
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .headdiv
 {
     text-align: center;
     font-family: 'Segoe UI', sans-serif;
-    color: black;
+    font-size: 30px;
+    color: white;
+    border-radius: 200px;
+    width: 40%;
+    margin-left: 28%;
+    padding: 2%;
+    background-color: rgb(108, 174, 255);
+    margin-bottom: 20px;
+}
+
+.para
+{
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 30px;
+    width: 100%;
+    padding: 2%;
+    color: white;
+    font-weight: bold;
+}
+
+.vardiv
+{
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 30px;
+    color: white;
+    border-radius: 50%;
+    width: 10%;
+    padding: 2%;
+    height: 100%;
+    background-color: rgb(108, 174, 255);
 }
 
 .divbox
 {
-    height: 100%;
-    width: 100%;
-    margin: 1px;
-    background-color: blue;
-    border: solid, black;
+    height: 150px;
+    width: 150px;
+    background-color: rgb(108, 174, 255);
+    border: solid;
+    border-radius: 30px;
 }
 
 .container 
 {
   display: grid;
-  grid-template-columns: repeat(3, 60px);
+  grid-template-columns: repeat(3, 150px);
   gap: 10px;
-  height: 20%;
 }
 
+.grid
+{
+    display: flex;
+    align-items: flex-star;
+    justify-content: center;
+    gap: 22%;
+    padding: 20px;
+}
+
+.butdiv
+{
+    text-align: center;
+}
+
+.b
+{
+    color: rgb(255, 255, 255);
+    background-color: rgb(108, 174, 255);
+    padding: 30px;
+    margin: 5px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 200px;
+    border: solid;
+    border-color: rgb(108, 174, 255);
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.b:hover
+{
+    background-color: rgb(88, 141, 207);
+    border-color: rgb(88, 141, 207);
+    cursor: pointer;
+}
+
+.b:active
+{
+    background-color: rgb(66, 107, 157);
+    border-color: rgb(66, 107, 157);
+}
