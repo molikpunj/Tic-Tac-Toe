@@ -10,7 +10,7 @@ h1
 
 .play
 {
-    color: #3b3e9d;
+    color: rgb(108, 174, 255);
     background-color: white;
     padding: 30px;
     margin: 30px;
@@ -39,7 +39,7 @@ h1
 .headdiv
 {
     text-align: center;
-    background-color: #3b3e9d;
+    background-color: rgb(108, 174, 255);
     border-radius: 200px;
     width: 1500px;
     margin-left: 200px;
@@ -48,7 +48,7 @@ h1
 .butdiv
 {
     text-align: center;
-    background-color: #3b3e9d;
+    background-color: rgb(108, 174, 255);
     border-radius: 200px;
     width: 800px;
     margin-left: 28%;
@@ -58,7 +58,7 @@ h1
 .creddiv
 {
     text-align: center;
-    background-color: #3b3e9d;
+    background-color: rgb(108, 174, 255);
     border-radius: 200px;
     width: 300px;
     margin-top: 3%;
