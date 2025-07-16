@@ -1,0 +1,14 @@
+.divbox
+{
+    height: 100%;
+    width: 100%;
+    background-color: blue;
+    border: solid, black;
+}
+
+.container 
+{
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+}
