@@ -22,3 +22,9 @@ function xshow(box) {
 function oshow(box) {
     box.textContent = "O";
 }
+
+document.getElementById("reset").onclick = function() {
+    boxes.forEach(function(b) {
+        b.textContent = "";
+    });
+}
