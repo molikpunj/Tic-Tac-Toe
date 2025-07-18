@@ -51,6 +51,10 @@ body
     background-color: rgb(108, 174, 255);
     border: solid;
     border-radius: 30px;
+    align-items: center;
+    font-size: 50px;
+    justify-content: center;
+    display: inline-flex;
 }
 
 .container 
