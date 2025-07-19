@@ -22,12 +22,19 @@ boxes.forEach(function(b) {
                 oshow(b);
                 xtrue = true;
             }
+            checkwinner();
         }
     };
 });
 
 function checkwinner() {
-    
+    for (let i=0; i<=7; i++) {
+        if (board[winningcombo[i][0]] !== "" && board[winningcombo[i][0]] === board[winningcombo[i][1]] && board[winningcombo[i][1]] === board[winningcombo[i][2]]) {
+            let wintext = document.createElement('p');
+            wintext.textContent = board[winningcombo[i][0]] + " has won!";
+            document.body.appendChild(wintext);
+    }
+}
 }
 
 function xshow(box) {
@@ -49,7 +56,8 @@ document.getElementById("reset").onclick = function() {
 }
 
 document.getElementById("resetscore").onclick = function() {
-for(let j=0; j<=8; j++){
-    console.log(board[j]);
+for(let j=0; j<=7; j++){
+    for(let k=0; k<=2; k++)
+    console.log(winningcombo[j][k]);
 }
 }
