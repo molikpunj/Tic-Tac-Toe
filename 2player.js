@@ -11,6 +11,7 @@ const winningcombo = [
     [0, 4, 8],
     [2, 4, 6]
 ];
+const windiv = document.getElementById("windiv")
 
 boxes.forEach(function(b) {
     b.onclick = function() {
@@ -32,7 +33,7 @@ function checkwinner() {
         if (board[winningcombo[i][0]] !== "" && board[winningcombo[i][0]] === board[winningcombo[i][1]] && board[winningcombo[i][1]] === board[winningcombo[i][2]]) {
             let wintext = document.createElement('p');
             wintext.textContent = board[winningcombo[i][0]] + " has won!";
-            document.body.appendChild(wintext);
+            windiv.getElementById("winp").innerText(wintext);
     }
 }
 }

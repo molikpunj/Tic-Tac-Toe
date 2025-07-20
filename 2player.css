@@ -20,6 +20,15 @@ body
     margin-bottom: 20px;
 }
 
+.windiv
+{
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: rgb(108, 174, 255);
+    font-size: 50px;
+    font-weight: bold;
+}
+
 .para
 {
     text-align: center;
