@@ -11,10 +11,11 @@ const winningcombo = [
     [0, 4, 8],
     [2, 4, 6]
 ];
-const windiv = document.getElementById("windiv")
+let gameover = false;
 
 boxes.forEach(function(b) {
     b.onclick = function() {
+        if(gameover == false) {
         if (b.textContent == ''){
             if (xtrue) {
                 xshow(b);
@@ -26,14 +27,15 @@ boxes.forEach(function(b) {
             checkwinner();
         }
     };
+}
 });
 
 function checkwinner() {
     for (let i=0; i<=7; i++) {
         if (board[winningcombo[i][0]] !== "" && board[winningcombo[i][0]] === board[winningcombo[i][1]] && board[winningcombo[i][1]] === board[winningcombo[i][2]]) {
-            let wintext = document.createElement('p');
-            wintext.textContent = board[winningcombo[i][0]] + " has won!";
-            windiv.getElementById("winp").innerText(wintext);
+            document.getElementById("divp").textContent = board[winningcombo[i][0]] + " has won!";
+            document.getElementById("divp").style.visibility = "visible";
+            gameover = true;
     }
 }
 }
@@ -54,11 +56,9 @@ document.getElementById("reset").onclick = function() {
     boxes.forEach(function(b) {
         b.textContent = "";
     });
+    board = ["", "", "", "", "", "", "", "", ""];
+    document.getElementById("divp").textContent = "Who Wins";
+    document.getElementById("divp").style.visibility = "hidden";
+    gameover = false;
 }
 
-document.getElementById("resetscore").onclick = function() {
-for(let j=0; j<=7; j++){
-    for(let k=0; k<=2; k++)
-    console.log(winningcombo[j][k]);
-}
-}
