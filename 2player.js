@@ -46,7 +46,12 @@ function checkwinner() {
                 oscore++;
                 document.getElementById("varO").textContent = oscore;
             }
-    }
+        }
+        else if (gameover == false && !board.includes("")) {
+            document.getElementById("divp").textContent = "Its a draw!";
+            document.getElementById("divp").style.visibility = "visible";
+            gameover = true;
+        }
 }
 }
 
