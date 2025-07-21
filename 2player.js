@@ -12,6 +12,8 @@ const winningcombo = [
     [2, 4, 6]
 ];
 let gameover = false;
+let xscore = 0;
+let oscore = 0;
 
 boxes.forEach(function(b) {
     b.onclick = function() {
@@ -36,6 +38,14 @@ function checkwinner() {
             document.getElementById("divp").textContent = board[winningcombo[i][0]] + " has won!";
             document.getElementById("divp").style.visibility = "visible";
             gameover = true;
+            if (board[winningcombo[i][0]] == 'X') {
+                xscore++;
+                document.getElementById("varX").textContent = xscore;
+            }
+            else {
+                oscore++;
+                document.getElementById("varO").textContent = oscore;
+            }
     }
 }
 }
@@ -62,3 +72,9 @@ document.getElementById("reset").onclick = function() {
     gameover = false;
 }
 
+document.getElementById("resetscore").onclick = function() {
+    xscore = 0;
+    oscore = 0;
+    document.getElementById("varX").textContent = xscore;
+    document.getElementById("varO").textContent = oscore;
+}
