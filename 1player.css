@@ -10,7 +10,7 @@ body
 {
     text-align: center;
     font-family: 'Segoe UI', sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     color: white;
     border-radius: 200px;
     width: 40%;
@@ -18,6 +18,16 @@ body
     padding: 2%;
     background-color: rgb(108, 174, 255);
     margin-bottom: 20px;
+}
+
+.windiv
+{
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: rgb(108, 174, 255);
+    font-size: 30px;
+    font-weight: bold;
+    visibility: hidden;
 }
 
 .para
@@ -51,6 +61,14 @@ body
     background-color: rgb(108, 174, 255);
     border: solid;
     border-radius: 30px;
+    align-items: center;
+    font-size: 50px;
+    justify-content: center;
+    display: inline-flex;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 80px;
 }
 
 .container 
@@ -79,7 +97,8 @@ body
     color: rgb(255, 255, 255);
     background-color: rgb(108, 174, 255);
     padding: 30px;
-    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
     font-family: 'Segoe UI', sans-serif;
     font-size: 30px;
     font-weight: bold;
