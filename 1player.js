@@ -16,14 +16,12 @@ let oscore = 0;
 const HUMAN = 'X';
 const AI = 'O';
 
-// Convert your div IDs to board indices
 function getIndexFromId(id) {
     const row = parseInt(id.charAt(3));
     const col = parseInt(id.charAt(4));
     return row * 3 + col;
 }
 
-// Convert board index back to div ID
 function getIdFromIndex(index) {
     const row = Math.floor(index / 3);
     const col = index % 3;
@@ -37,11 +35,9 @@ boxes.forEach(function(b) {
         const index = getIndexFromId(b.id);
         
         if (board[index] === '') {
-            // Human move
             makeMove(index, HUMAN);
             
             if (!gameover) {
-                // AI move after a short delay for better UX
                 setTimeout(() => {
                     const aiMove = getBestMove();
                     if (aiMove !== -1) {
@@ -73,7 +69,6 @@ function checkwinner() {
     for (let i = 0; i < winningcombo.length; i++) {
         const [a, b, c] = winningcombo[i];
         if (board[a] !== "" && board[a] === board[b] && board[b] === board[c]) {
-            // We have a winner
             gameover = true;
             
             if (board[a] === HUMAN) {
@@ -89,7 +84,6 @@ function checkwinner() {
         }
     }
     
-    // Check for draw
     if (!board.includes("")) {
         gameover = true;
         showMessage("It's a draw! 🤝");
@@ -97,7 +91,6 @@ function checkwinner() {
 }
 
 function showMessage(message) {
-    // Create a message display since your 1player.html doesn't have one
     let messageDiv = document.getElementById("gameMessage");
     if (!messageDiv) {
         messageDiv = document.createElement("div");
@@ -109,7 +102,6 @@ function showMessage(message) {
         messageDiv.style.fontWeight = "bold";
         messageDiv.style.margin = "20px";
         
-        // Insert after the header
         const header = document.querySelector(".headdiv");
         header.parentNode.insertBefore(messageDiv, header.nextSibling);
     }
@@ -117,11 +109,9 @@ function showMessage(message) {
     messageDiv.style.visibility = "visible";
 }
 
-// MINIMAX ALGORITHM - The brain of the AI
 function minimax(newBoard, depth, isMaximizing) {
     const winner = checkWinnerForMinimax(newBoard);
     
-    // Terminal states
     if (winner === AI) return 10 - depth;
     if (winner === HUMAN) return depth - 10;
     if (newBoard.every(cell => cell !== "")) return 0; // Draw
@@ -181,7 +171,6 @@ function getBestMove() {
     return bestMove;
 }
 
-// Reset game function
 document.getElementById("reset").onclick = function() {
     boxes.forEach(function(b) {
         b.textContent = "";
@@ -195,7 +184,6 @@ document.getElementById("reset").onclick = function() {
     }
 }
 
-// Reset score function
 document.getElementById("resetscore").onclick = function() {
     xscore = 0;
     oscore = 0;
