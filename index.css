@@ -41,8 +41,8 @@ h1
     text-align: center;
     background-color: rgb(108, 174, 255);
     border-radius: 200px;
-    width: 1500px;
-    margin-left: 200px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .butdiv
