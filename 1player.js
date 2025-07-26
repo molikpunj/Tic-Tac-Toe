@@ -29,7 +29,7 @@ boxes.forEach(function(b) {
                         aiMove();
                         checkwinner();
                         playerTurn = true;
-                    }, 500);
+                    }, 500); 
                 }
             }
         }
@@ -60,7 +60,6 @@ function checkwinner() {
         }
     }
     
-    // Check for draw
     if (gameover == false && !board.includes("")) {
         document.getElementById("divp").textContent = "It's a draw!";
         document.getElementById("windiv").style.visibility = "visible";
@@ -85,46 +84,53 @@ function aiMove() {
 }
 
 function getBestMove() {
+    let bestScore = -Infinity;
+    let bestMove = -1;
+    
     for (let i = 0; i < 9; i++) {
         if (board[i] === "") {
             board[i] = "O";
-            if (checkWinCondition("O")) {
+            let score = minimax(board, 0, false);
+            board[i] = "";
+            
+            if (score > bestScore) {
+                bestScore = score;
+                bestMove = i;
+            }
+        }
+    }
+    
+    return bestMove;
+}
+
+function minimax(board, depth, isMaximizing) {
+    if (checkWinCondition("O")) return 10 - depth;
+    if (checkWinCondition("X")) return depth - 10;
+    if (!board.includes("")) return 0;
+    
+    if (isMaximizing) {
+        let bestScore = -Infinity;
+        for (let i = 0; i < 9; i++) {
+            if (board[i] === "") {
+                board[i] = "O";
+                let score = minimax(board, depth + 1, false);
                 board[i] = "";
-                return i;
+                bestScore = Math.max(score, bestScore);
             }
-            board[i] = "";
         }
-    }
-    
-    for (let i = 0; i < 9; i++) {
-        if (board[i] === "") {
-            board[i] = "X";
-            if (checkWinCondition("X")) {
-                board[i] = ""; 
-                return i;
+        return bestScore;
+    } else {
+        let bestScore = Infinity;
+        for (let i = 0; i < 9; i++) {
+            if (board[i] === "") {
+                board[i] = "X";
+                let score = minimax(board, depth + 1, true);
+                board[i] = "";
+                bestScore = Math.min(score, bestScore);
             }
-            board[i] = "";
         }
+        return bestScore;
     }
-    
-    if (board[4] === "") {
-        return 4;
-    }
-    
-    const corners = [0, 2, 6, 8];
-    for (let corner of corners) {
-        if (board[corner] === "") {
-            return corner;
-        }
-    }
-    
-    for (let i = 0; i < 9; i++) {
-        if (board[i] === "") {
-            return i;
-        }
-    }
-    
-    return -1;
 }
 
 function checkWinCondition(player) {
