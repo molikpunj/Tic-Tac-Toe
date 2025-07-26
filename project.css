@@ -4,51 +4,151 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     margin: 0;
-    padding: 0;
+    padding: 10px;
+    min-height: 100vh;
 }
 
 .headdiv {
     text-align: center;
     font-family: 'Segoe UI', sans-serif;
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 20px);
     color: white;
     border-radius: 200px;
-    width: 60%;
-    margin: 30px auto;
-    padding: 2%;
+    width: min(90%, 800px);
+    margin: 20px auto;
+    padding: clamp(15px, 3vw, 40px);
     background-color: rgb(108, 174, 255);
 }
 
+.headdiv h1 {
+    margin: 0;
+    font-size: clamp(24px, 5vw, 36px);
+}
+
 .doccontainer {
-    width: 80%;
-    margin: auto;
+    width: min(95%, 900px);
+    margin: 20px auto;
     background-color: rgb(108, 174, 255);
     border-radius: 30px;
-    padding: 40px;
+    padding: clamp(20px, 4vw, 40px);
     font-family: 'Segoe UI', sans-serif;
     color: rgb(30, 30, 30);
-    font-size: 18px;
+    font-size: clamp(14px, 2.5vw, 18px);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     line-height: 1.6;
 }
 
 .doccontainer h2 {
-    font-size: 28px;
-    color: rgb(108, 174, 255);
-    margin-top: 30px;
-    border-bottom: 2px solid rgb(108, 174, 255);
+    font-size: clamp(20px, 4vw, 28px);
+    color: white;
+    margin-top: clamp(20px, 4vw, 30px);
+    margin-bottom: 15px;
+    border-bottom: 2px solid white;
     padding-bottom: 5px;
 }
 
 .doccontainer ul {
     list-style-type: disc;
-    padding-left: 20px;
+    padding-left: clamp(15px, 3vw, 20px);
+    margin: 15px 0;
 }
 
 .doccontainer li {
-    margin-bottom: 10px;
+    margin-bottom: clamp(8px, 2vw, 10px);
+    line-height: 1.5;
 }
 
 .doccontainer p {
     margin-bottom: 15px;
+    line-height: 1.6;
+    color: white;
+}
+
+.doccontainer strong {
+    color: rgb(30, 30, 30);
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+    }
+    
+    .headdiv {
+        margin: 15px auto;
+        padding: 20px 15px;
+    }
+    
+    .doccontainer {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+    
+    .doccontainer h2 {
+        margin-top: 25px;
+        text-align: center;
+    }
+    
+    .doccontainer ul {
+        padding-left: 15px;
+    }
+    
+    .doccontainer li {
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .headdiv {
+        width: 95%;
+        margin: 10px auto;
+        padding: 15px 10px;
+        border-radius: 150px;
+    }
+    
+    .headdiv h1 {
+        font-size: 20px;
+    }
+    
+    .doccontainer {
+        width: 98%;
+        padding: 20px 15px;
+        font-size: 14px;
+        border-radius: 15px;
+    }
+    
+    .doccontainer h2 {
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .doccontainer p {
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
+    
+    .doccontainer ul {
+        padding-left: 12px;
+    }
+    
+    .doccontainer li {
+        margin-bottom: 10px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    .doccontainer {
+        padding: 15px 10px;
+        font-size: 13px;
+    }
+    
+    .doccontainer h2 {
+        font-size: 16px;
+    }
+    
+    .headdiv h1 {
+        font-size: 18px;
+    }
 }

@@ -4,20 +4,22 @@ body
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin: 0;
+    padding: 10px;
+    min-height: 100vh;
 }
 
 .headdiv
 {
     text-align: center;
     font-family: 'Segoe UI', sans-serif;
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 20px);
     color: white;
     border-radius: 200px;
-    width: 40%;
-    margin-left: 28%;
-    padding: 2%;
+    width: min(90%, 600px);
+    margin: 0 auto 20px auto;
+    padding: clamp(15px, 3vw, 30px);
     background-color: rgb(108, 174, 255);
-    margin-bottom: 20px;
 }
 
 .windiv
@@ -25,98 +27,183 @@ body
     text-align: center;
     font-family: 'Segoe UI', sans-serif;
     color: rgb(108, 174, 255);
-    font-size: 30px;
+    font-size: clamp(20px, 4vw, 30px);
     font-weight: bold;
     visibility: hidden;
+    margin: 20px 0;
 }
 
 .para
 {
     text-align: center;
     font-family: 'Segoe UI', sans-serif;
-    font-size: 30px;
+    font-size: clamp(16px, 3vw, 24px);
     width: 100%;
-    padding: 2%;
+    padding: 8px;
     color: white;
     font-weight: bold;
+    margin: 0;
 }
 
 .vardiv
 {
     text-align: center;
     font-family: 'Segoe UI', sans-serif;
-    font-size: 30px;
+    font-size: clamp(16px, 3vw, 24px);
     color: white;
     border-radius: 50%;
-    width: 10%;
-    padding: 2%;
-    height: 100%;
+    width: clamp(120px, 15vw, 200px);
+    padding: clamp(15px, 2vw, 30px);
     background-color: rgb(108, 174, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 120px;
 }
 
 .divbox
 {
-    height: 150px;
-    width: 150px;
+    height: clamp(80px, 12vw, 150px);
+    width: clamp(80px, 12vw, 150px);
     background-color: rgb(108, 174, 255);
     border: solid;
     border-radius: 30px;
     align-items: center;
-    font-size: 50px;
     justify-content: center;
     display: inline-flex;
     font-family: 'Segoe UI', sans-serif;
     font-weight: bold;
     color: white;
-    font-size: 80px;
+    font-size: clamp(40px, 8vw, 80px);
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.divbox:hover {
+    transform: scale(1.05);
+}
+
+.divbox:active {
+    transform: scale(0.95);
 }
 
 .container 
 {
-  display: grid;
-  grid-template-columns: repeat(3, 150px);
-  gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, clamp(80px, 12vw, 150px));
+    gap: clamp(8px, 2vw, 10px);
+    justify-content: center;
 }
 
 .grid
 {
     display: flex;
-    align-items: flex-star;
+    align-items: center;
     justify-content: center;
-    gap: 22%;
-    padding: 20px;
+    gap: clamp(20px, 5vw, 80px);
+    padding: 20px 10px;
+    flex-wrap: wrap;
 }
 
 .butdiv
 {
     text-align: center;
+    margin-top: 20px;
 }
 
 .b
 {
     color: rgb(255, 255, 255);
     background-color: rgb(108, 174, 255);
-    padding: 30px;
-    margin-left: 5px;
-    margin-right: 5px;
+    padding: clamp(15px, 3vw, 30px);
+    margin: 5px;
     font-family: 'Segoe UI', sans-serif;
-    font-size: 30px;
+    font-size: clamp(16px, 3vw, 30px);
     font-weight: bold;
     border-radius: 200px;
     border: solid;
     border-color: rgb(108, 174, 255);
     transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+    cursor: pointer;
+    min-width: 120px;
 }
 
 .b:hover
 {
     background-color: rgb(88, 141, 207);
     border-color: rgb(88, 141, 207);
-    cursor: pointer;
 }
 
 .b:active
 {
     background-color: rgb(66, 107, 157);
     border-color: rgb(66, 107, 157);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .vardiv {
+        width: 140px;
+        margin: 10px 0;
+    }
+    
+    .container {
+        margin: 20px 0;
+    }
+    
+    .butdiv {
+        margin-top: 30px;
+    }
+    
+    .b {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+        max-width: 200px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    .headdiv {
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+    
+    .grid {
+        padding: 15px 5px;
+        gap: 15px;
+    }
+    
+    .vardiv {
+        width: 120px;
+        min-height: 100px;
+        padding: 12px;
+    }
+    
+    .para {
+        font-size: 14px;
+        padding: 5px;
+    }
+    
+    .windiv {
+        margin: 15px 0;
+        font-size: 18px;
+    }
+    
+    .b {
+        width: 90%;
+        padding: 12px;
+        font-size: 16px;
+        margin: 8px auto;
+    }
 }

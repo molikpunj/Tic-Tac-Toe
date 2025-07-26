@@ -1,26 +1,29 @@
 h1 
 {
     padding-top: 3%;
-    padding-bottom:3%;
+    padding-bottom: 3%;
     text-align: center;
-    font-size: 1000%;
+    font-size: clamp(3rem, 8vw, 8rem);
     font-family: 'Segoe UI', sans-serif;
     color: white;
+    margin: 0;
 }
 
 .play
 {
     color: rgb(108, 174, 255);
     background-color: white;
-    padding: 30px;
-    margin: 30px;
+    padding: clamp(20px, 4vw, 30px);
+    margin: clamp(15px, 3vw, 30px);
     font-family: 'Segoe UI', sans-serif;
-    font-size: 30px;
+    font-size: clamp(20px, 4vw, 30px);
     font-weight: bold;
     border-radius: 200px;
     border: solid;
     border-color: white;
     transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+    min-width: 200px;
+    display: inline-block;
 }
 
 .play:hover
@@ -41,8 +44,9 @@ h1
     text-align: center;
     background-color: rgb(108, 174, 255);
     border-radius: 200px;
-    width: 80%;
-    margin: 0 auto;
+    width: min(90%, 800px);
+    margin: 20px auto;
+    padding: 20px;
 }
 
 .butdiv
@@ -50,9 +54,9 @@ h1
     text-align: center;
     background-color: rgb(108, 174, 255);
     border-radius: 200px;
-    width: 800px;
-    margin-left: 28%;
-    margin-top: 1%;
+    width: min(95%, 800px);
+    margin: 20px auto;
+    padding: 20px;
 }
 
 .creddiv
@@ -60,8 +64,9 @@ h1
     text-align: center;
     background-color: rgb(108, 174, 255);
     border-radius: 200px;
-    width: 300px;
-    margin-top: 3%;
+    width: min(90%, 300px);
+    margin: 30px auto;
+    padding: 10px;
 }
 
 body
@@ -70,13 +75,62 @@ body
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin: 0;
+    padding: 10px;
+    min-height: 100vh;
 }
 
 p
 {
     font-family: 'Segoe UI', sans-serif;
     font-weight: bold;
-    font-size: 28px;
+    font-size: clamp(18px, 4vw, 28px);
     color: white;
-    padding: 20px;
+    padding: 15px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .butdiv {
+        padding: 15px;
+    }
+    
+    .play {
+        display: block;
+        width: 80%;
+        margin: 15px auto;
+        padding: 15px;
+    }
+    
+    .headdiv {
+        margin: 10px auto;
+        padding: 15px;
+    }
+    
+    .creddiv {
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    .play {
+        width: 90%;
+        margin: 10px auto;
+        padding: 12px;
+        font-size: 18px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        padding: 15px 10px;
+    }
+    
+    p {
+        font-size: 16px;
+        padding: 10px;
+    }
 }
