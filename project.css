@@ -1,0 +1,54 @@
+body {
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+.headdiv {
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 20px;
+    color: white;
+    border-radius: 200px;
+    width: 60%;
+    margin: 30px auto;
+    padding: 2%;
+    background-color: rgb(108, 174, 255);
+}
+
+.doccontainer {
+    width: 80%;
+    margin: auto;
+    background-color: rgb(108, 174, 255);
+    border-radius: 30px;
+    padding: 40px;
+    font-family: 'Segoe UI', sans-serif;
+    color: rgb(30, 30, 30);
+    font-size: 18px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    line-height: 1.6;
+}
+
+.doccontainer h2 {
+    font-size: 28px;
+    color: rgb(108, 174, 255);
+    margin-top: 30px;
+    border-bottom: 2px solid rgb(108, 174, 255);
+    padding-bottom: 5px;
+}
+
+.doccontainer ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.doccontainer li {
+    margin-bottom: 10px;
+}
+
+.doccontainer p {
+    margin-bottom: 15px;
+}
