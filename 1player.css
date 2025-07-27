@@ -168,7 +168,6 @@ body
     }
 }
 
-/* Extra small devices */
 @media (max-width: 480px) {
     body {
         padding: 5px;
